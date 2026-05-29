@@ -29,17 +29,19 @@
                         <td class="px-6 py-4 text-sm text-gray-500">
                             {{ $msg->created_at->diffForHumans() }}
                         </td>
-                        <td class="px-6 py-4 text-center">
+                        <td class="px-6 py-4 text-center flex">
                             <a href={{ route('dashboard.message', $msg->id) }}>
                                 <button class="text-blue-500 hover:text-blue-400 p-2" title="Leer">
                                     <i data-lucide="eye" class="size-5"></i>
                                 </button>
                             </a>
-                            <a href="{{ route('dashboard.message.destroy', $msg->id) }}">
+                            <form class="ml-2" action={{ route('dashboard.message.destroy', $msg->id) }} method="POST">
+                                @csrf
+                                @method('DELETE')
                                 <button class="text-red-500 hover:text-red-400 p-2" title="Eliminar">
                                     <i data-lucide="trash-2" class="size-5"></i>
                                 </button>
-                            </a>
+                            </form>
                         </td>
                     </tr>
                 @empty
