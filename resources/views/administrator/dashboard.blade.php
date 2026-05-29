@@ -35,9 +35,11 @@
                                     <i data-lucide="eye" class="size-5"></i>
                                 </button>
                             </a>
-                            <button class="text-red-500 hover:text-red-400 p-2" title="Eliminar">
-                                <i data-lucide="trash-2" class="size-5"></i>
-                            </button>
+                            <a href="{{ route('dashboard.message.destroy', $msg->id) }}">
+                                <button class="text-red-500 hover:text-red-400 p-2" title="Eliminar">
+                                    <i data-lucide="trash-2" class="size-5"></i>
+                                </button>
+                            </a>
                         </td>
                     </tr>
                 @empty
