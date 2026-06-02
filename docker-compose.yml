@@ -1,22 +1,4 @@
 services:
-  app:
-    build:
-      context: .
-      dockerfile: docker/php/Dockerfile
-    working_dir: /var/www/html
-    volumes:
-      - .:/var/www/html
-
-    networks:
-      - laravel_net
-
-  nginx:
-    image: nginx:alpine
-    volumes:
-      - .:/var/www/html
-    networks:
-      - laravel_net
-
   mysql:
     image: mysql:8.0
     environment:
@@ -26,16 +8,14 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
-    networks:
-      - laravel_net
+    ports:
+      - "127.0.0.1:3306:3306"
 
   redis:
     image: redis:alpine
-    networks:
-      - laravel_net
+    ports:
+      - "127.0.0.1:6379:6379"
 
-networks:
-  laravel_net:
 
 volumes:
   mysql_data:

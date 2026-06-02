@@ -20,7 +20,7 @@
             <h1 class="text-3xl font-semibold mb-6">Mensaje de {{ $message->name }}</h1>
             <p class="text-gray-400 mb-6">{{ $message->message }}</p>
             <div class="flex justify-end">
-                <form action="{{ route('dashboard.message.destroy', $message->id) }}" method="POST">
+                <form action={{ route('dashboard.message.destroy', $message->id) }} method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="text-red-500 hover:text-red-400 p-2" title="Eliminar">

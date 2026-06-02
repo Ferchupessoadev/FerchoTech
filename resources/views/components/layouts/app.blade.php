@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Servicios - Fercho Tech</title>
+    <title>{{ $title }}</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans">
+<body class="bg-[#0b1329] text-gray-100 font-sans antialiased">
     <x-navbar.home></x-navbar.home>
 
+    <main class="min-h-screen">
+        {{ $slot }}
+    </main>
+    <x-footer></x-footer>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

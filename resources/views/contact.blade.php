@@ -1,64 +1,67 @@
-<!DOCTYPE html>
-<html lang={{ str_replace('_', '-', app()->getLocale()) }}>
+<x-layouts.app title="Contactanos">
+    <section id="contacto" class="py-28 bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contacto - Fercho Sistemas</title>
-    @include('partials.head')
-</head>
+            <div class="relative bg-slate-900/40 backdrop-blur-md border border-slate-800 p-8 sm:p-14 rounded-3xl shadow-2xl shadow-black/40">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
-<body class="bg-gray-900 text-gray-100 font-sans">
-    <x-navbar.home></x-navbar.home>
-    <section id="contacto" class="py-20 bg-gray-900">
-        <div class="max-w-3xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-8 text-center text-blue-500">Contactanos</h3>
-
-            @if(session('success'))
-                <div class="bg-green-500/20 border border-green-500 text-green-400 p-4 rounded-lg mb-6 text-center">
-                    {{ session('success') }}
+                <div class="text-center mb-10">
+                    <span class="text-blue-500 font-semibold tracking-wider uppercase text-sm">¿Tienes un proyecto?</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold mt-2 tracking-tight">Contactanos</h3>
                 </div>
-            @endif
 
-            <form action="{{ route('contact.store') }}" method="POST" class="space-y-4">
-                @csrf
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm text-gray-400 mb-1">Nombre</label>
-                        <input type="text" name="name" placeholder="Tu nombre" value="{{ old('name') }}"
-                            class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:border-blue-500 outline-none"
-                            required>
-                        @error('name') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                @if(session('success'))
+                    <div class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 p-4 rounded-xl mb-8 text-center text-sm font-medium flex items-center justify-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        {{ session('success') }}
                     </div>
-                    <div>
-                        <label class="block text-sm text-gray-400 mb-1">Email</label>
-                        <input type="email" name="email" placeholder="Tu email" value="{{ old('email') }}"
-                            class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:border-blue-500 outline-none"
-                            required>
-                        @error('email') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                @endif
+
+                <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
+                    @csrf
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Nombre</label>
+                            <input type="text" name="name" placeholder="Tu nombre" value="{{ old('name') }}"
+                                class="w-full bg-slate-950/50 border @error('name') border-red-500/50 focus:border-red-500 focus:ring-red-500/20 @else border-slate-800 focus:border-blue-500 focus:ring-blue-500/20 @enderror rounded-xl p-3.5 text-white placeholder-slate-600 outline-none transition-all duration-200 focus:ring-4"
+                                required>
+                            @error('name') <span class="text-red-400 text-xs mt-1.5 block font-medium">{{ $message }}</span> @enderror
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email</label>
+                            <input type="email" name="email" placeholder="Tu email" value="{{ old('email') }}"
+                                class="w-full bg-slate-950/50 border @error('email') border-red-500/50 focus:border-red-500 focus:ring-red-500/20 @else border-slate-800 focus:border-blue-500 focus:ring-blue-500/20 @enderror rounded-xl p-3.5 text-white placeholder-slate-600 outline-none transition-all duration-200 focus:ring-4"
+                                required>
+                            @error('email') <span class="text-red-400 text-xs mt-1.5 block font-medium">{{ $message }}</span> @enderror
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-400 mb-1">Asunto</label>
-                    <input type="text" name="subject" placeholder="Asunto del mensaje" value="{{ old('subject') }}"
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:border-blue-500 outline-none">
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-400 mb-1">Mensaje</label>
-                    <textarea name="message" placeholder="Tu mensaje" rows="5"
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:border-blue-500 outline-none"
-                        required>{{ old('message') }}</textarea>
-                    @error('message') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                </div>
-                <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition shadow-lg shadow-blue-500/20">
-                    Enviar mensaje
-                </button>
-            </form>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Asunto</label>
+                        <input type="text" name="subject" placeholder="Asunto del mensaje" value="{{ old('subject') }}"
+                            class="w-full bg-slate-950/50 border border-slate-800 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl p-3.5 text-white placeholder-slate-600 outline-none transition-all duration-200 focus:ring-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Mensaje</label>
+                        <textarea name="message" placeholder="Contanos sobre tu idea o problema..." rows="5"
+                            class="w-full bg-slate-950/50 border @error('message') border-red-500/50 focus:border-red-500 focus:ring-red-500/20 @else border-slate-800 focus:border-blue-500 focus:ring-blue-500/20 @enderror rounded-xl p-3.5 text-white placeholder-slate-600 outline-none resize-none transition-all duration-200 focus:ring-4"
+                            required>{{ old('message') }}</textarea>
+                        @error('message') <span class="text-red-400 text-xs mt-1.5 block font-medium">{{ $message }}</span> @enderror
+                    </div>
+
+                    <!-- Botón de Envío -->
+                    <div class="pt-2">
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-center tracking-wide">
+                            Enviar mensaje
+                        </button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </section>
-    <x-footer></x-footer>
-</body>
-
-</html>
+</x-layouts.app>

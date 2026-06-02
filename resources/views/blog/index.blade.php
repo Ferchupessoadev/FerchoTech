@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog - Fercho Sistemas</title>
+    <title>Blog - Fercho Tech</title>
     @include('partials.head')
 </head>
 
@@ -50,7 +50,7 @@
                 </div>
             </a>
         </div>
-        
+
         <a href="https://blog.tusitio.com" class="md:hidden mt-8 w-full flex items-center justify-center py-3 bg-gray-800 rounded-xl text-blue-500 font-bold border border-gray-700">
             Ver todas las entradas
         </a>

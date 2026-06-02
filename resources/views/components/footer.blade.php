@@ -3,7 +3,7 @@
 
         <div class="col-span-1 md:col-span-1">
             <h2 class="text-2xl font-bold text-white mb-4">
-                FERCHO <span class="text-blue-500">SISTEMAS</span>
+                Fercho <span class="text-blue-500">Tech</span>
             </h2>
             <p class="text-sm leading-relaxed mb-6">
                 Soluciones integrales en tecnología, soporte técnico y desarrollo digital para potenciar tu negocio o proyecto personal.
@@ -45,7 +45,7 @@
             <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                     <i data-lucide="mail" class="w-4 h-4 mr-3 text-blue-500"></i>
-                    contacto@ferchosistemas.com
+                    contact@ferchudev.com
                 </li>
                 <li class="flex items-center">
                     <i data-lucide="map-pin" class="w-4 h-4 mr-3 text-blue-500"></i>

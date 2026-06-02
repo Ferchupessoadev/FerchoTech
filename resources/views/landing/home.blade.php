@@ -1,133 +1,141 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fercho Sistemas | Soluciones Tecnológicas</title>
-    @include('partials.head')
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-
-<body class="bg-gray-900 text-gray-100 font-sans">
-
-    <x-navbar.home></x-navbar.home>
-
+<x-layouts.app title="Fercho Tech">
     <x-header.home></x-header.home>
 
-    <section id="servicios" class="py-20 bg-gray-800/50">
+    <!-- Sección: Nuestros Servicios -->
+    <section id="servicios" class="py-24 bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white">
         <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12 text-center">Nuestros Servicios</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-700 hover:border-blue-500 transition">
-                    <div class="text-blue-500 mb-4">
-                        <i data-lucide="settings-2" class="w-8 h-8"></i>
+            <div class="text-center mb-16">
+                <span class="text-blue-500 font-semibold tracking-wider uppercase text-sm">Especialidades</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold mt-2 tracking-tight">Nuestros Servicios</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
+                    <div class="text-blue-500 mb-5 p-3 bg-blue-500/10 rounded-xl inline-block border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="settings-2" class="size-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Soporte Técnico</h4>
-                    <p class="text-gray-400">Resolución de problemas de hardware y software de manera eficiente.</p>
+                    <h4 class="text-xl font-bold mb-3 text-slate-100">Soporte Técnico</h4>
+                    <p class="text-slate-400 leading-relaxed text-sm">Resolución de problemas de hardware y software de manera eficiente y garantizada.</p>
                 </div>
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-700 hover:border-blue-500 transition">
-                    <div class="text-blue-500 mb-4">
+
+                <!-- Servicio 2 -->
+                <div class="p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
+                    <div class="text-blue-500 mb-5 p-3 bg-blue-500/10 rounded-xl inline-block border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                         <i data-lucide="code-2" class="size-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Desarrollo Web</h4>
-                    <p class="text-gray-400">Creación de sitios modernos y optimizados con las últimas tecnologías.</p>
+                    <h4 class="text-xl font-bold mb-3 text-slate-100">Desarrollo Web</h4>
+                    <p class="text-slate-400 leading-relaxed text-sm">Creación de sitios modernos, escalables y optimizados con las últimas tecnologías del mercado.</p>
                 </div>
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-700 hover:border-blue-500 transition">
-                    <div class="text-blue-500 mb-4">
+
+                <!-- Servicio 3 -->
+                <div class="p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
+                    <div class="text-blue-500 mb-5 p-3 bg-blue-500/10 rounded-xl inline-block border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                         <i data-lucide="shield-check" class="size-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Seguridad</h4>
-                    <p class="text-gray-400">Protección de datos y optimización de redes para tu empresa.</p>
+                    <h4 class="text-xl font-bold mb-3 text-slate-100">Seguridad</h4>
+                    <p class="text-slate-400 leading-relaxed text-sm">Protección avanzada de datos, firewalls y optimización de redes críticas para tu empresa.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="features" class="py-20 bg-gray-900">
+
+    <!-- Sección: Características / Confianza -->
+    <section id="features" class="py-24 bg-[#080d1c] text-white border-t border-slate-900">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h3 class="text-3xl font-bold mb-6">¿Por qué confiar en nosotros?</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-3">✔</span>
-                            <p class="text-gray-300"><b>Experiencia Comprobada:</b> Más de 5 años en el sector IT.</p>
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Beneficios -->
+                <div class="lg:w-1/2 space-y-6">
+                    <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-8">¿Por qué confiar en nosotros?</h3>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Experiencia Comprobada</h4>
+                                <p class="text-slate-400 text-sm mt-0.5">Más de 5 años liderando e implementando proyectos en el sector IT.</p>
+                            </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-3">✔</span>
-                            <p class="text-gray-300"><b>Atención Personalizada:</b> No eres un número más, somos tus
-                                aliados.</p>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Atención Personalizada</h4>
+                                <p class="text-slate-400 text-sm mt-0.5">No eres un número más en una lista de espera. Somos tus aliados estratégicos directos.</p>
+                            </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-3">✔</span>
-                            <p class="text-gray-300"><b>Resultados Rápidos:</b> Optimizamos procesos para entregas
-                                ágiles.</p>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Resultados Rápidos</h4>
+                                <p class="text-slate-400 text-sm mt-0.5">Optimizamos flujos de desarrollo para garantizar despliegues ágiles y seguros.</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                <div class="md:w-1/2 bg-gray-800 p-8 rounded-2xl border border-gray-700 text-center">
-                    <span class="text-6xl font-bold text-blue-500">+100</span>
-                    <p class="text-xl text-gray-400 mt-2">Proyectos completados con éxito</p>
+
+                <!-- Contador de Impacto Estilizado -->
+                <div class="lg:w-1/2 w-full relative">
+                    <div class="absolute inset-0 bg-blue-500/10 rounded-3xl filter blur-xl opacity-30"></div>
+                    <div class="relative bg-gradient-to-br from-slate-900 to-slate-950 p-12 rounded-3xl border border-slate-800/80 text-center shadow-2xl">
+                        <span class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent tracking-tight">+100</span>
+                        <p class="text-lg font-medium text-slate-300 mt-4">Proyectos completados con éxito</p>
+                        <p class="text-sm text-slate-500 mt-1">Estrategias digitales operando a nivel global</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="faq" class="py-20 bg-gray-900">
+
+    <!-- Sección: FAQ -->
+    <section id="faq" class="py-24 bg-gradient-to-b from-[#080d1c] to-[#0b1329] text-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12 text-center">Preguntas Frecuentes</h3>
+            <div class="text-center mb-16">
+                <span class="text-blue-500 font-semibold tracking-wider uppercase text-sm">Resolviendo Dudas</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold mt-2 tracking-tight">Preguntas Frecuentes</h3>
+            </div>
 
             <div class="space-y-4">
+                <!-- FAQ Item 1 -->
                 <div class="faq-item group">
-                    <button
-                        class="w-full flex items-center justify-between p-6 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 focus:outline-none"
-                        onclick="toggleFAQ(this)">
-                        <span class="text-lg font-semibold text-left">¿Cuánto tiempo toma desarrollar un sitio
-                            web?</span>
-                        <span class="text-blue-500 transform transition-transform duration-300 icon-plus">
-                            <i data-lucide="plus"></i>
+                    <button class="w-full flex items-center justify-between p-6 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-base sm:text-lg font-semibold text-left text-slate-200 group-hover:text-white transition-colors">¿Cuánto tiempo toma desarrollar un sitio web?</span>
+                        <span class="text-blue-400 transition-transform duration-300 icon-plus flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="size-5"></i>
                         </span>
                     </button>
-                    <div
-                        class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-800/30 rounded-b-2xl px-6">
-                        <p class="py-4 text-gray-400">
-                            Depende de la complejidad. Una landing page suele estar lista en 1 semana, mientras que una
-                            web corporativa completa puede tomar de 3 a 4 semanas.
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-950/30 rounded-b-2xl px-6">
+                        <p class="py-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                            Depende de la complejidad. Una landing page suele estar lista en 1 semana, mientras que una web corporativa completa o una plataforma e-commerce puede tomar de 3 a 4 semanas.
                         </p>
                     </div>
                 </div>
 
+                <!-- FAQ Item 2 -->
                 <div class="faq-item group">
-                    <button
-                        class="w-full flex items-center justify-between p-6 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 focus:outline-none"
-                        onclick="toggleFAQ(this)">
-                        <span class="text-lg font-semibold text-left">¿El soporte técnico es presencial o remoto?</span>
-                        <span class="text-blue-500 transform transition-transform duration-300 icon-plus">
-                            <i data-lucide="plus"></i>
+                    <button class="w-full flex items-center justify-between p-6 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-base sm:text-lg font-semibold text-left text-slate-200 group-hover:text-white transition-colors">¿El soporte técnico es presencial o remoto?</span>
+                        <span class="text-blue-400 transition-transform duration-300 icon-plus flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="size-5"></i>
                         </span>
                     </button>
-                    <div
-                        class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-800/30 rounded-b-2xl px-6">
-                        <p class="py-4 text-gray-400">
-                            Ofrecemos ambas modalidades. La mayoría de los problemas de software se resuelven de forma
-                            remota en minutos, pero para hardware contamos con visitas técnicas programadas.
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-950/30 rounded-b-2xl px-6">
+                        <p class="py-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                            Ofrecemos ambas modalidades. La mayoría de las incidencias de software o configuraciones de red se resuelven de manera remota en minutos. Para incidentes de hardware físico, coordinamos visitas técnicas programadas.
                         </p>
                     </div>
                 </div>
 
+                <!-- FAQ Item 3 -->
                 <div class="faq-item group">
-                    <button
-                        class="w-full flex items-center justify-between p-6 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 focus:outline-none"
-                        onclick="toggleFAQ(this)">
-                        <span class="text-lg font-semibold text-left">¿Cómo aseguran la protección de mis datos?</span>
-                        <span class="text-blue-500 transform transition-transform duration-300 icon-plus">
-                            <i data-lucide="plus"></i>
+                    <button class="w-full flex items-center justify-between p-6 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-base sm:text-lg font-semibold text-left text-slate-200 group-hover:text-white transition-colors">¿Cómo aseguran la protección de mis datos?</span>
+                        <span class="text-blue-400 transition-transform duration-300 icon-plus flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="size-5"></i>
                         </span>
                     </button>
-                    <div
-                        class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-800/30 rounded-b-2xl px-6">
-                        <p class="py-4 text-gray-400">
-                            Implementamos protocolos de encriptación SSL, firewalls avanzados y auditorías periódicas
-                            para garantizar que tu información y la de tus clientes esté siempre blindada.
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-950/30 rounded-b-2xl px-6">
+                        <p class="py-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                            Implementamos certificados de seguridad SSL modernos, políticas estrictas de cifrado de datos en reposo/tránsito, cortafuegos robustos y realizamos auditorías de código periódicas para blindar tu negocio.
                         </p>
                     </div>
                 </div>
@@ -135,104 +143,28 @@
         </div>
     </section>
 
-    <section id="testimonios" class="py-20 bg-gray-800/30">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold mb-4">Lo que dicen nuestros clientes</h3>
-                <p class="text-gray-400 max-w-2xl mx-auto">La confianza de quienes ya trabajan con nosotros es nuestra
-                    mejor carta de presentación.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-700 flex flex-col h-full">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6 flex-grow">"El mejor soporte de la ciudad, me encanto la atención, diez de diez"</p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 font-bold">
-                            RA
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Florencia Saporittis</h4>
-                            <p class="text-sm text-gray-500">Programadora</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="p-8 bg-gray-900 rounded-2xl border border-gray-700 flex flex-col h-full border-b-blue-500/50">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6 flex-grow">"Nuestra nueva web no solo se ve increíble, sino que
-                        es mucho más rápida. Notamos un incremento en las consultas desde la primera semana."</p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-500 font-bold">
-                            MS
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">María Sánchez</h4>
-                            <p class="text-sm text-gray-500">Directora de Marketing</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-700 flex flex-col h-full">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                        <i data-lucide="star" class="fill-current size-4"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6 flex-grow">"La auditoría de seguridad que realizaron nos dio la
-                        tranquilidad que necesitábamos. Profesionales, directos y muy transparentes."</p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 font-bold">
-                            JP
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Juan Pérez</h4>
-                            <p class="text-sm text-gray-500">Gerente de IT</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Script Native JS (Mismo funcionamiento limpio que ya tenías) -->
     <script>
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
             const icon = button.querySelector('.icon-plus');
 
-            // Cerrar otros si quieres que solo haya uno abierto a la vez (opcional)
             document.querySelectorAll('.faq-answer').forEach(el => {
-                if (el !== answer) el.style.maxHeight = null;
+                if (el !== answer) {
+                    el.style.maxHeight = null;
+                    el.previousElementSibling.querySelector('.icon-plus').style.transform = 'rotate(0deg)';
+                }
             });
 
             if (answer.style.maxHeight) {
                 answer.style.maxHeight = null;
+                button.style.borderRadius = '1rem'; // Reestablece bordes redondeados completos
                 icon.style.transform = 'rotate(0deg)';
             } else {
                 answer.style.maxHeight = answer.scrollHeight + "px";
+                button.style.borderRadius = '1rem 1rem 0 0'; // Estética perfecta al abrirse
                 icon.style.transform = 'rotate(45deg)';
             }
         }
     </script>
-
-    <x-footer></x-footer>
-</body>
-
-</html>
+</x-layouts.app>

@@ -5,10 +5,12 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
-      target: dev # 👈 ESTO ES CLAVE
+      target: dev
+    env_file:
+      - ./.env
 
   nginx:
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "8080:80"
+      - "8000:80"
