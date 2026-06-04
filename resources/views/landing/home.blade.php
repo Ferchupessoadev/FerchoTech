@@ -1,7 +1,5 @@
 <x-layouts.app title="Fercho Tech">
     <x-header.home></x-header.home>
-
-    <!-- Sección: Nuestros Servicios -->
     <section id="servicios" class="py-24 bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -10,7 +8,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
                 <div class="p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
                     <div class="text-blue-500 mb-5 p-3 bg-blue-500/10 rounded-xl inline-block border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                         <i data-lucide="settings-2" class="size-8"></i>
@@ -18,8 +15,6 @@
                     <h4 class="text-xl font-bold mb-3 text-slate-100">Soporte Técnico</h4>
                     <p class="text-slate-400 leading-relaxed text-sm">Resolución de problemas de hardware y software de manera eficiente y garantizada.</p>
                 </div>
-
-                <!-- Servicio 2 -->
                 <div class="p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
                     <div class="text-blue-500 mb-5 p-3 bg-blue-500/10 rounded-xl inline-block border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                         <i data-lucide="code-2" class="size-8"></i>
@@ -27,8 +22,6 @@
                     <h4 class="text-xl font-bold mb-3 text-slate-100">Desarrollo Web</h4>
                     <p class="text-slate-400 leading-relaxed text-sm">Creación de sitios modernos, escalables y optimizados con las últimas tecnologías del mercado.</p>
                 </div>
-
-                <!-- Servicio 3 -->
                 <div class="p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
                     <div class="text-blue-500 mb-5 p-3 bg-blue-500/10 rounded-xl inline-block border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                         <i data-lucide="shield-check" class="size-8"></i>
@@ -39,9 +32,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Sección: Características / Confianza -->
-    <section id="features" class="py-24 bg-[#080d1c] text-white border-t border-slate-900">
+    <section id="features" class="py-24 bg-[#080d1c] text-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <!-- Beneficios -->
@@ -72,8 +63,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Contador de Impacto Estilizado -->
                 <div class="lg:w-1/2 w-full relative">
                     <div class="absolute inset-0 bg-blue-500/10 rounded-3xl filter blur-xl opacity-30"></div>
                     <div class="relative bg-gradient-to-br from-slate-900 to-slate-950 p-12 rounded-3xl border border-slate-800/80 text-center shadow-2xl">
@@ -85,8 +74,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Sección: FAQ -->
     <section id="faq" class="py-24 bg-gradient-to-b from-[#080d1c] to-[#0b1329] text-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -95,7 +82,6 @@
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
                 <div class="faq-item group">
                     <button class="w-full flex items-center justify-between p-6 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 focus:outline-none" onclick="toggleFAQ(this)">
                         <span class="text-base sm:text-lg font-semibold text-left text-slate-200 group-hover:text-white transition-colors">¿Cuánto tiempo toma desarrollar un sitio web?</span>
@@ -110,7 +96,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
                 <div class="faq-item group">
                     <button class="w-full flex items-center justify-between p-6 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 focus:outline-none" onclick="toggleFAQ(this)">
                         <span class="text-base sm:text-lg font-semibold text-left text-slate-200 group-hover:text-white transition-colors">¿El soporte técnico es presencial o remoto?</span>
@@ -125,7 +110,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 3 -->
                 <div class="faq-item group">
                     <button class="w-full flex items-center justify-between p-6 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 focus:outline-none" onclick="toggleFAQ(this)">
                         <span class="text-base sm:text-lg font-semibold text-left text-slate-200 group-hover:text-white transition-colors">¿Cómo aseguran la protección de mis datos?</span>
@@ -143,7 +127,6 @@
         </div>
     </section>
 
-    <!-- Script Native JS (Mismo funcionamiento limpio que ya tenías) -->
     <script>
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;

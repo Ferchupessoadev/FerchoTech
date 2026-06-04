@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('icon');
-            $table->text('description');
-            $table->string('image_path')->nullable();
+        if (Schema::hasTable('lucide_icons')) {
+            return;
+        }
+
+        Schema::create('lucide_icons', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->json('tags');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        // Schema::dropIfExists('lucide_icons');
     }
 };

@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
 use Illuminate\Http\Request;
 
-class ServicesController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $services = Service::all();
 
-        return view('dashboard.services.index', compact('services'));
+        return view('dashboard.blog.index');
     }
 
     /**
@@ -36,7 +34,7 @@ class ServicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Service $services)
+    public function show(string $id)
     {
         //
     }
@@ -44,23 +42,23 @@ class ServicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Service $service)
+    public function edit(string $id)
     {
-        return view('dashboard.services.edit', compact('service'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $services)
+    public function update(Request $request, string $id)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $services)
+    public function destroy(string $id)
     {
         //
     }
