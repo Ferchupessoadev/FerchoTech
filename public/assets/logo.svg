@@ -3,36 +3,21 @@
 
 <svg
    version="1.1"
-   id="svg2"
+   id="svg100"
    width="1536"
    height="1024"
    viewBox="0 0 1536 1024"
-   sodipodi:docname="logo.png"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs6" />
-  <sodipodi:namedview
-     id="namedview4"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1" />
+     id="defs104" />
   <g
-     inkscape:groupmode="layer"
-     inkscape:label="Image"
-     id="g8">
+     id="g106">
     <image
        width="1536"
        height="1024"
        preserveAspectRatio="none"
-       style="image-rendering:optimizeSpeed"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABgAAAAQACAYAAAAncZJCAABhIWNhQlgAAGEhanVtYgAAAB5qdW1k
 YzJwYQARABCAAACqADibcQNjMnBhAAAAYPtqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3Vy
 bjpjMnBhOjFiNzM2ZTY2LTNjNDQtNDk1ZC05ZWYyLWE5MGUyMWJmMzFjNwAAABfEanVtYgAAAClq
@@ -36639,6 +36624,6 @@ IFCvvA1iPDmcLY6UvgX4N9hFY8e6X2eoZm4i0qS6aGTnQvV4MrSxfodLTcRyMXEgTAmrWzRtKf/o
 eeb5aIvVeOctFs7abaGEbfRvxL4+WpuL5ibvKFcFyDf8KvdXMFbB+pqG0skJ3N8nxs6WKzqDHyOQ
 mtagrd/UtsynERsD4Fx4KtoVLz9qZUzUXPwBCKEjgmxOmnQAAAAASUVORK5CYII=
 "
-       id="image10" />
+       id="image108" />
   </g>
 </svg>
