@@ -10,6 +10,10 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
@@ -23,3 +27,32 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #3b82f6;
 }
+
+
+.ql-toolbar.ql-snow {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+.ql-toolbar .ql-stroke { stroke: #94a3b8 !important; }
+.ql-toolbar .ql-fill { fill: #94a3b8 !important; }
+.ql-toolbar .ql-picker { color: #94a3b8 !important; }
+.ql-container.ql-snow {
+    border-color: #1e293b !important;
+    background-color: rgb(5 11 20 / 80%) !important;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: #f1f5f9;
+    min-height: 280px;
+}
+.ql-editor.ql-blank::before {
+    color: #475569 !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.ql-editor.ql-blank::before { color: #475569 !important; font-style: normal; }

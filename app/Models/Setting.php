@@ -13,13 +13,17 @@ class Setting extends Model
         'value',
     ];
 
-    public function set($key, $value)
+    public static function set($key, $value)
     {
-        $this->where('key', $key)->updateOrCreate(['value' => $value]);
+        static::updateOrCreate(
+            ['key' => $key],
+            ['value' => $value]
+        );
     }
 
-    public function get($key)
+    public static function get($key)
     {
-        return $this->where('key', $key)->value('value');
+        return static::where('key', $key)
+            ->value('value');
     }
 }

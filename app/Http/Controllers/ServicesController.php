@@ -30,7 +30,15 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
+            'icon' => ['required', 'string'],
+        ]);
+
+        $service = Service::create($validated);
+
+        return redirect()->route('dashboard.blog.index')->with('success', 'Post creado con éxito.');
     }
 
     /**
@@ -38,7 +46,7 @@ class ServicesController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('landing.services', compact('service'));
     }
 
     /**
