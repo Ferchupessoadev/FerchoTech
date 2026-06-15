@@ -40,7 +40,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('password.reset.store') }}" method="POST" class="space-y-6">
+            <form action="{{ route('password.email') }}" method="POST" class="space-y-6">
                 @csrf
 
                 <div>
