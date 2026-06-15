@@ -1,22 +1,35 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PasswordReset;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\PasswordReset;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::middleware('guest')->group(function () {
+    // login
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/login', [AuthController::class, 'store'])->name('login.store');
 
-Route::post('/login', [AuthController::class, 'store'])->name('login.store');
+    // Register
+    Route::get('/register', [AuthController::class, 'create'])->name('register');
+    Route::post('/register', [AuthController::class, 'create'])->name('register');
 
 
-Route::get('/password/reset/email', [PasswordReset::class, 'index'])->name('password.reset');
-Route::post('/password/sendemail', [PasswordReset::class, 'store'])->middleware('throttle:password-reset')->name('password.reset.store');
+    Route::get('/auth/{provider}/redirect', [AuthController::class, 'redirectToProvider'])
+        ->name('auth.redirect');
+    Route::get('/auth/{provider}/callback', [AuthController::class, 'handleProviderCallback']);
+});
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
 
-Route::get('/password/reset', [PasswordReset::class, 'edit'])->name('password.reset.edit');
-Route::post('/password/reset', [PasswordReset::class, 'update'])->name('password.reset.update');
+Route::get('/forgot-password', [PasswordReset::class, 'index'])
+    ->name('password.request');
+Route::post('/forgot-password', [PasswordReset::class, 'store'])
+    ->name('password.email')
+    ->middleware('throttle:password-reset');
 
-Route::post('/logout', function () {
-    Auth::logout();
-    return redirect()->route('home');
-})->name('logout');
+Route::get('/password/reset/email', [PasswordReset::class, 'edit'])
+    ->name('password.reset');
+Route::post('/reset-password', [PasswordReset::class, 'update'])
+    ->name('password.store');
+

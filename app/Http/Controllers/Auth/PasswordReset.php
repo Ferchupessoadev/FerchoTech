@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\PasswordReset as IlluminatePasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -33,9 +34,9 @@ class PasswordReset extends Controller
     }
 
 
-    public function edit()
+    public function edit(Request $request)
     {
-        $token = request()->route()->parameter('token');
+        $token = $request->query('token');
 
         if (is_null($token)) {
             return redirect()->route('password.reset');
