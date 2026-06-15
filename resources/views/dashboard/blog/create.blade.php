@@ -72,9 +72,9 @@
             </form>
         </div>
     </div>
-    <script src="https://cdn.quilljs.com/1.2.2/quill.min.js"></script>
-    <link href="https://cdn.quilljs.com/1.2.2/quill.snow.css" rel="stylesheet">
-    <script src="{{ asset('image-resize.min.js')}}"></script>
+    <script src="{{ asset('assets/quilljs/quill.min.js') }}"></script>
+    <link href={{ asset('assets/quilljs/quill.snow.css')}} rel="stylesheet">
+    <script src="{{ asset('assets/quilljs/image-resize.min.js')}}"></script>
     <script>
         // Inicializar el constructor de Quill con el plugin de resize inyectado
         const quill = new Quill('#editor', {
@@ -129,10 +129,10 @@
             input.click();
         });
 
-        // 2. Sincronizar con el input oculto al enviar el formulario
         document.getElementById('blog-form').onsubmit = function() {
             const contentInput = document.getElementById('content');
             contentInput.value = quill.root.innerHTML; // En Quill 1 se usa .root.innerHTML
+            console.log("Contenido enviado:", contentInput.value);
         };
     </script>
 </x-layouts.dashboard>
