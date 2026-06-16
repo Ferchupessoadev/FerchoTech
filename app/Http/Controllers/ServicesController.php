@@ -38,7 +38,7 @@ class ServicesController extends Controller
 
         $service = Service::create($validated);
 
-        return redirect()->route('dashboard.blog.index')->with('success', 'Post creado con éxito.');
+        return redirect()->route('dashboard.blog.index')->with('success', 'Service creado con éxito.');
     }
 
     /**
@@ -70,6 +70,13 @@ class ServicesController extends Controller
      */
     public function destroy(Service $service)
     {
-
+        try {
+            $service->delete();
+            return redirect()->route('dashboard.services.index')
+                             ->with('success', 'Servicio eliminado con éxito.');
+        } catch (\Exception $e) {
+            return redirect()->route('dashboard.services.index')
+                             ->with('error', 'No se pudo eliminar el servicio, está siendo utilizado.');
+        }
     }
 }
