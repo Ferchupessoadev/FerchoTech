@@ -18,13 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/dashboard/message/{message}', [MessageController::class, 'destroy'])->name('dashboard.message.destroy');
 
     // Services crud
-    Route::get('/dashboard/services', [ServicesController::class, 'index'])->name('dashboard.services.index');
-    Route::get('/dashboard/services/create', [ServicesController::class, 'create'])->name('dashboard.services.create');
-    Route::post('/dashboard/services/create', [ServicesController::class, 'store'])->name('dashboard.services.store');
-    Route::get('/dashboard/services/{service}', [ServicesController::class, 'show'])->name('dashboard.services.show');
-    Route::delete('/dashboard/services/{service}', [ServicesController::class, 'destroy'])->name('dashboard.services.destroy');
-    Route::get('/dashboard/services/{service}/edit', [ServicesController::class, 'edit'])->name('dashboard.services.edit');
-    Route::put('/dashboard/services/{service}', [ServicesController::class, 'update'])->name('dashboard.services.update');
+    Route::prefix('dashboard')->name('dashboard.')->group(function() {
+        Route::resource('services', ServicesController::class);
+    });
 
     // Statistics
     Route::get('/dashboard/statistics', function () {
