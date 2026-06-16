@@ -12,7 +12,7 @@ Route::get('/servicios', fn() => view('landing.services'))->name('services');
 Route::get('/nosotros', fn() => view('landing.aboutas'))->name('about');
 
 
-Route::get('/contacto', fn() => view('contact'))->name('contact');
+Route::get('/contacto', fn() => view('landing.contact'))->name('contact');
 
 
 Route::post('/contacto', [ContactController::class, 'store'])
