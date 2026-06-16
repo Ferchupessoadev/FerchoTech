@@ -1,1 +1,3 @@
 [![Laravel Tests](https://github.com/Ferchupessoadev/ferchosistemas/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/Ferchupessoadev/ferchosistemas/actions/workflows/tests.yml)
+
+[![Deploy to Production](https://github.com/Ferchupessoadev/ferchosistemas/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/Ferchupessoadev/ferchosistemas/actions/workflows/deploy.yml)
