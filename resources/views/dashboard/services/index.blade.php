@@ -9,7 +9,7 @@
             </p>
         </div>
 
-        <a href={{route('dashboard.services.store')}} class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white text-sm font-semibold rounded-xl shadow-lg shadow-blue-600/10 transition-all duration-200 cursor-pointer">
+        <a href="{{route('dashboard.services.store')}}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white text-sm font-semibold rounded-xl shadow-lg shadow-blue-600/10 transition-all duration-200 cursor-pointer">
             <i data-lucide="plus" class="size-4"></i>
             Nuevo Servicio
         </a>
@@ -56,13 +56,36 @@
 
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="flex items-center justify-end gap-2">
-                                    <a href="{{ route('dashboard.services.edit', $service) }}"
-                                       class="inline-flex items-center justify-center p-2 text-slate-400 hover:text-blue-400 hover:bg-blue-500/10 rounded-lg border border-transparent hover:border-blue-500/20 transition-all duration-200 cursor-pointer"
-                                       title="Editar servicio">
-                                        <i data-lucide="pencil" class="size-4"></i>
-                                        <span class="sr-only">Editar</span>
-                                    </a>
-                                    </div>
+                                    <form action="{{ route('dashboard.services.destroy', $service) }}"
+                                          method="POST"
+                                          x-data
+                                          @submit.prevent="Swal.fire({
+                                              title: '¿Estás seguro?',
+                                              text: 'Esta acción no se puede deshacer',
+                                              icon: 'warning',
+                                              showCancelButton: true,
+                                              confirmButtonColor: '#ef4444',
+                                              cancelButtonColor: '#64748b',
+                                              confirmButtonText: 'Sí, eliminar',
+                                              cancelButtonText: 'Cancelar'
+                                          }).then((result) => {
+                                              if (result.isConfirmed) {
+                                                  $el.submit();
+                                              }
+                                          })"
+                                    >
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit"
+                                            class="inline-flex items-center justify-center p-2 text-slate-400 hover:text-red-500 hover:bg-red-500/10 rounded-lg border border-transparent hover:border-red-500/20 transition-all duration-200 cursor-pointer"
+                                            title="Eliminar Servicio"
+                                        >
+                                            <i data-lucide="trash" class="size-4"></i>
+                                            <span class="sr-only">Eliminar</span>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     @empty

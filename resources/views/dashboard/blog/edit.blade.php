@@ -66,7 +66,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 2. Inicializar Quill
             const quill = new Quill('#editor', {
                 theme: 'snow',
                 modules: {
@@ -82,13 +81,12 @@
                 }
             });
 
-            // 3. Inyectar contenido existente de forma segura (usando json_encode para escapar)
+
             const oldContent = {!! json_encode($post->content) !!};
             if (oldContent) {
                 quill.root.innerHTML = oldContent;
             }
 
-            // 4. Handler de imágenes
             quill.getModule('toolbar').addHandler('image', function() {
                 const input = document.createElement('input');
                 input.setAttribute('type', 'file');
@@ -121,7 +119,6 @@
                 input.click();
             });
 
-            // 5. Sincronizar al enviar
             document.getElementById('blog-form').onsubmit = function() {
                 document.getElementById('content').value = quill.root.innerHTML;
             };

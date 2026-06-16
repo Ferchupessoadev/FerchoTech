@@ -7,6 +7,7 @@
     <title>{{ config('app.name') }}</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased h-full min-h-screen">
     <div class="flex h-full min-h-screen overflow-hidden">
@@ -72,6 +73,7 @@
         </div>
     </div>
 
+    <x-alerts.alert />
     <script>
         lucide.createIcons();
     </script>

@@ -76,7 +76,6 @@
     <link href={{ asset('assets/quilljs/quill.snow.css')}} rel="stylesheet">
     <script src="{{ asset('assets/quilljs/image-resize.min.js')}}"></script>
     <script>
-        // Inicializar el constructor de Quill con el plugin de resize inyectado
         const quill = new Quill('#editor', {
             theme: 'snow',
             placeholder: 'Comenzá a escribir o arrastrá imágenes directamente acá...',
@@ -131,8 +130,7 @@
 
         document.getElementById('blog-form').onsubmit = function() {
             const contentInput = document.getElementById('content');
-            contentInput.value = quill.root.innerHTML; // En Quill 1 se usa .root.innerHTML
-            console.log("Contenido enviado:", contentInput.value);
+            contentInput.value = quill.root.innerHTML;
         };
     </script>
 </x-layouts.dashboard>
