@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRegisteredRequest;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 
 class RegisteredUserController extends Controller
@@ -12,8 +14,14 @@ class RegisteredUserController extends Controller
         return view('administrator.auth.register');
     }
 
-    public function store()
+    public function store(StoreRegisteredRequest $request)
     {
-        //
+        $user = User::create($request->validated());
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect()->intended('dashboard');
     }
 }
