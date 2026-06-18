@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/dashboard', [MessageController::class, 'index'])->name('dashboard');
 
 

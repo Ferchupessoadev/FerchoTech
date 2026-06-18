@@ -10,7 +10,7 @@ Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/api/blog/search', [BlogController::class, 'search']);
 Route::get('blog/{post}', [BlogController::class, 'show'])->name('blog.show');
 
-Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(function () {
+Route::middleware(['auth','role:admin'])->prefix('dashboard')->name('dashboard.')->group(function () {
     Route::resource('blog', PostController::class)->parameters(['blog' => 'post'])->except('show');
 
     Route::post('blog/upload-image', [PostController::class, 'uploadEditorImage'])->name('blog.upload-image');
