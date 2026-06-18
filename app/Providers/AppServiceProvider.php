@@ -2,11 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\Service;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
 
@@ -25,14 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('components.footer', function ($view) {
-            $view->with('services', Service::all());
-        });
-
-
-        View::composer('components.navbar.home', function ($view) {
-             $view->with('services', Service::all());
-        });
 
         RateLimiter::for('contact-form', function (Request $request) {
 
