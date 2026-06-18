@@ -26,6 +26,7 @@
                             class="w-full pl-11 pr-4 py-3.5 bg-slate-950/60 border @error('name') border-red-500/50 @else border-slate-800 @enderror rounded-xl text-white placeholder-slate-600 outline-none transition-all focus:ring-4 focus:ring-blue-500/20"
                             required>
                     </div>
+                    @error('name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
@@ -38,6 +39,7 @@
                             class="w-full pl-11 pr-4 py-3.5 bg-slate-950/60 border @error('email') border-red-500/50 @else border-slate-800 @enderror rounded-xl text-white placeholder-slate-600 outline-none transition-all focus:ring-4 focus:ring-blue-500/20"
                             required>
                     </div>
+                    @error('email') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
@@ -50,6 +52,7 @@
                             class="w-full pl-11 pr-4 py-3.5 bg-slate-950/60 border @error('password') border-red-500/50 @else border-slate-800 @enderror rounded-xl text-white placeholder-slate-600 outline-none transition-all focus:ring-4 focus:ring-blue-500/20"
                             required>
                     </div>
+                    @error('password') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
