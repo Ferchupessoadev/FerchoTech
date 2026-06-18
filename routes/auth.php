@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordReset;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -10,8 +11,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'store'])->name('login.store');
 
     // Register
-    Route::get('/register', [AuthController::class, 'create'])->name('register');
-    Route::post('/register', [AuthController::class, 'create'])->name('register');
+    Route::get('/register', [RegisteredUserController::class, 'index'])->name('register');
+    Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.store');
 
 
     Route::get('/auth/{provider}/redirect', [AuthController::class, 'redirectToProvider'])
