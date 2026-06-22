@@ -37,16 +37,16 @@
             Servicios
         </a>
         <a href="{{ route('dashboard.users.index') }}"
-           class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group {{ request()->routeIs('dashboard.services.index') ? 'bg-blue-500/10 text-blue-400 font-semibold' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200' }}">
-            <span class="absolute left-0 top-3 bottom-3 w-1 rounded-r-md bg-blue-500 transition-transform scale-y-0 group-hover:scale-y-100 {{ request()->routeIs('dashboard.services.index') ? 'scale-y-100' : '' }}"></span>
+           class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group {{ request()->routeIs('dashboard.users.index') ? 'bg-blue-500/10 text-blue-400 font-semibold' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200' }}">
+            <span class="absolute left-0 top-3 bottom-3 w-1 rounded-r-md bg-blue-500 transition-transform scale-y-0 group-hover:scale-y-100 {{ request()->routeIs('dashboard.users.index') ? 'scale-y-100' : '' }}"></span>
             <i data-lucide="users" class="size-5 transition-colors group-hover:text-blue-400 {{ request()->routeIs('dashboard.users.index') ? 'text-blue-400' : 'text-slate-500' }}"></i>
             Usuarios
         </a>
 
         <a href="{{ route('dashboard.blog.index') }}"
-           class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group {{ request()->routeIs('dashboard.post.index') ? 'bg-blue-500/10 text-blue-400 font-semibold' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200' }}">
-            <span class="absolute left-0 top-3 bottom-3 w-1 rounded-r-md bg-blue-500 transition-transform scale-y-0 group-hover:scale-y-100 {{ request()->routeIs('dashboard.post.index') ? 'scale-y-100' : '' }}"></span>
-            <i data-lucide="file-text" class="size-5 transition-colors group-hover:text-blue-400 {{ request()->routeIs('dashboard.post.index') ? 'text-blue-400' : 'text-slate-500' }}"></i>
+           class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group {{ request()->routeIs('dashboard.blog.index') ? 'bg-blue-500/10 text-blue-400 font-semibold' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200' }}">
+            <span class="absolute left-0 top-3 bottom-3 w-1 rounded-r-md bg-blue-500 transition-transform scale-y-0 group-hover:scale-y-100 {{ request()->routeIs('dashboard.blog.index') ? 'scale-y-100' : '' }}"></span>
+            <i data-lucide="file-text" class="size-5 transition-colors group-hover:text-blue-400 {{ request()->routeIs('dashboard.blog.index') ? 'text-blue-400' : 'text-slate-500' }}"></i>
             Publicaciones
         </a>
 
