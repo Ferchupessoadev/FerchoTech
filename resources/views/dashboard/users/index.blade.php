@@ -44,11 +44,24 @@
                             <div class="flex items-center gap-4">
 
                                 <div class="relative">
-                                    <img
-                                        src="{{ $user->avatar }}"
-                                        class="size-14 rounded-2xl object-cover border border-slate-700"
-                                        alt="{{ $user->name }}"
-                                    >
+                                    @if ($user->avatar)
+                                        <img
+                                            src="{{ $user->avatar }}"
+                                            class="size-14 rounded-2xl object-cover border border-slate-700"
+                                            alt="{{ $user->name }}"
+                                        >
+                                    @else
+                                        <div class="size-14 rounded-2xl border border-slate-700 bg-slate-800 flex items-center justify-center">
+                                            <span class="text-lg font-bold text-slate-200">
+                                                {{
+                                                    collect(explode(' ', $user->name))
+                                                        ->take(2)
+                                                        ->map(fn ($part) => strtoupper(substr($part, 0, 1)))
+                                                        ->implode('')
+                                                }}
+                                            </span>
+                                        </div>
+                                    @endif
 
                                     @if($user->email_verified_at)
                                         <div class="absolute -bottom-1 -right-1 size-4 rounded-full bg-emerald-500 border-2 border-slate-900"></div>
@@ -117,7 +130,7 @@
                                     <i data-lucide="square-pen" class="size-4"></i>
                                 </a>
 
-                                <form action="#" method="POST">
+                                <form action="{{ route('dashboard.users.destroy', $user->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
 
