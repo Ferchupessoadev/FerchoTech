@@ -3,6 +3,7 @@
 use App\Http\Controllers\LucideIconController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
@@ -57,6 +58,8 @@ Route::middleware(['auth','role:admin'])->group(function () {
         ));
     })->name('dashboard.statistics');
 
+    Route::get('/dashboard/users', [UserController::class, 'index'])->name('dashboard.users.index');
+    Route::delete('/dashboard/users/{user}', [UserController::class, 'destroy'])->name('dashboard.users.destroy');
     Route::get('/dashboard/setting', [SettingController::class, 'index'])->name('dashboard.settings.index');
     Route::get('/api/lucide-icons/search', [LucideIconController::class, 'index'])->name('api.icons.search');
 });
