@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -17,6 +18,10 @@ Route::middleware(['auth','role:admin'])->prefix('dashboard')->name('dashboard.'
 
 });
 
+Route::middleware('auth')->group(function (){
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::patch('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.update.avatar');
+});
 
 Route::get('/media/preview/{media}', function (Media $media) {
     if (Auth::check() && (int) Auth::user()->id === (int) $media->model_id) {
