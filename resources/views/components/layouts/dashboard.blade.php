@@ -51,8 +51,8 @@
                             </div>
 
                             <div class="size-9 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-sm shadow-md shadow-blue-500/5 select-none transition-transform hover:scale-105 overflow-hidden">
-                                @if (auth()->user()->avatar)
-                                    <img src="{{ auth()->user()->avatar }}"
+                                @if (auth()->user()->hasMedia('avatars'))
+                                    <img src="{{ auth()->user()->getFirstMediaUrl('avatars', 'thumb') }}"
                                          alt="{{ auth()->user()->name }}"
                                          class="w-full h-full object-cover">
                                 @else

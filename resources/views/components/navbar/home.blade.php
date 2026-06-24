@@ -70,15 +70,79 @@
                         </a>
                     </div>
                 @else
-                    <a href="{{ route('dashboard') }}" class="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-medium transition-all">
-                        <i data-lucide="layout-dashboard" class="size-4"></i> Dashboard
-                    </a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="text-sm font-medium text-slate-400 hover:text-red-400 transition-colors px-2">
-                            Salir
+                    <div class="relative" x-data="{ userMenuOpen: false }">
+                        <button
+                            @click="userMenuOpen = !userMenuOpen"
+                            @click.outside="userMenuOpen = false"
+                            class="flex items-center gap-3 pl-2 pr-4 py-1.5 rounded-full border border-slate-700/60 bg-slate-900/40 hover:bg-slate-800/60 text-slate-200 hover:text-white transition-all duration-300 focus:outline-none cursor-pointer group scene-glow"
+                        >
+                        @if(Auth::user()->hasMedia('avatars'))
+                            <img
+                                src="{{ Auth::user()->getFirstMediaUrl('avatars', 'thumb') }}"
+                                alt="Avatar de {{ Auth::user()->name }}"
+                                class="size-8 rounded-full object-cover border border-blue-500/30 group-hover:border-blue-400 transition-colors"
+                            >
+                        @else
+                            <div class="size-8 rounded-full bg-blue-600/10 border border-blue-500/30 text-blue-500 dark:text-blue-400 flex items-center justify-center text-xs font-bold uppercase tracking-wider group-hover:border-blue-400/60 transition-colors">
+                                @php
+                                    $words = explode(' ', Auth::user()->name);
+                                    $initials = count($words) >= 2
+                                        ? mb_substr($words[0], 0, 1) . mb_substr($words[1], 0, 1)
+                                        : mb_substr($words[0], 0, 2);
+                                @endphp
+                                {{ $initials }}
+                            </div>
+                        @endif
+                            <span class="text-sm font-medium tracking-wide">{{ Auth::user()->name }}</span>
+                            <i data-lucide="chevron-down" class="size-4 text-slate-400 transition-transform duration-300" :class="userMenuOpen ? 'rotate-180' : ''"></i>
                         </button>
-                    </form>
+
+                        <div
+                            x-show="userMenuOpen"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                            x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
+                            class="absolute right-0 mt-3 w-56 z-50 origin-top-right"
+                            style="display: none;"
+                        >
+                            <div class="bg-slate-950/95 backdrop-blur-2xl border border-slate-800/80 rounded-2xl shadow-2xl overflow-hidden p-1.5 space-y-0.5">
+                                <a href="{{ route('profile.index') }}" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-blue-600/10 hover:text-blue-400 transition-all duration-200">
+                                    <i data-lucide="user" class="size-4.5 text-slate-400 group-hover:text-blue-400"></i>
+                                    <span class="text-sm font-medium">Perfil</span>
+                                </a>
+                                @role('admin')
+                                    <a href="{{ route('dashboard') }}" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-blue-600/10 hover:text-blue-400 transition-all duration-200">
+                                        <i data-lucide="layout-dashboard" class="size-4.5 text-slate-400 group-hover:text-blue-400"></i>
+                                        <span class="text-sm font-medium">Dashboard</span>
+                                    </a>
+                                @endrole
+
+                                <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-blue-600/10 hover:text-blue-400 transition-all duration-200">
+                                    <i data-lucide="settings" class="size-4.5 text-slate-400"></i>
+                                    <span class="text-sm font-medium">Configuración</span>
+                                </a>
+
+                                <button @click="" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-blue-600/10 hover:text-blue-400 transition-all duration-200 text-left cursor-pointer">
+                                    <i data-lucide="sun" class="size-4.5 text-slate-400"></i>
+                                    <span class="text-sm font-medium">Modo Claro</span>
+                                </button>
+
+                                <div class="border-t border-slate-900 my-1"></div>
+
+                                <!-- Cerrar Sesión -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-red-500/10 hover:text-red-400 transition-all duration-200 text-left cursor-pointer">
+                                        <i data-lucide="log-out" class="size-4.5 text-slate-400"></i>
+                                        <span class="text-sm font-medium">Desconectarse</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 @endguest
             </div>
         </div>
