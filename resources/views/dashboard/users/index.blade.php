@@ -44,9 +44,9 @@
                             <div class="flex items-center gap-4">
 
                                 <div class="relative">
-                                    @if ($user->avatar)
+                                    @if ($user->hasMedia('avatars'))
                                         <img
-                                            src="{{ $user->avatar }}"
+                                            src="{{ $user->getFirstMediaUrl('avatars', 'thumb') }}"
                                             class="size-14 rounded-2xl object-cover border border-slate-700"
                                             alt="{{ $user->name }}"
                                         >
