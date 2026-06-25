@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginAuthEmailRequest;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -22,23 +23,14 @@ class AuthController extends Controller
             return redirect(route('dashboard'));
     }
 
-    public function store(Request $request)
+    public function store(LoginAuthEmailRequest $request)
     {
-        $request->validate([
-            'email' => ['required', 'email', 'string'],
-            'password' => ['required', 'string'],
-        ], [
-            'email.required' => 'El correo es obligatorio.',
-            'email.email' => 'Formato de correo no válido.',
-            'password.required' => 'La contraseña es obligatoria.',
-        ]);
-
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->back();
+            return redirect()->intended(route('home'));
         }
 
         return redirect()->back()
