@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 
 
@@ -84,11 +85,16 @@ class AuthController extends Controller
                     'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
                     'password' => Hash::make(uniqid()),
-                    'avatar' => $socialUser->getAvatar(),
                     $provider . '_id' => $socialUser->getId(),
                 ]);
                 if($socialUser->user['email_verified']) {
                     $user->markEmailAsVerified();
+                }
+                try {
+                    $user->addMediaFromUrl($socialUser->getAvatar())
+                         ->toMediaCollection('avatars', 'public');
+                } catch (\Exception $e) {
+                    Log::error("No se pudo descargar el avatar de Google: " . $e->getMessage());
                 }
                 event(new Registered($user));
             }
