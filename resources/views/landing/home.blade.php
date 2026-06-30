@@ -1,4 +1,13 @@
 <x-layouts.app title="Fercho Tech">
+    <x-slot:seo>
+        <meta name="description" content="Soporte técnico profesional, desarrollo de software a medida y mantenimiento de sistemas. La confianza y soluciones tecnológicas que tu negocio necesita.">
+        <meta name="robots" content="index, follow">
+
+        <meta property="og:title" content="Fercho Tech - Impulsamos tu Infraestructura Digital">
+        <meta property="og:description" content="Soporte técnico, desarrollo de software a medida y soluciones tecnológicas eficientes para tu negocio.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://ferchudev.com/">
+    </x-slot:seo>
     <x-header.home></x-header.home>
 
     <section id="servicios" class="py-28 bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white relative overflow-hidden">

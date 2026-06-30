@@ -1,4 +1,13 @@
 <x-layouts.app title="Contactanos - FerchoTech">
+    <x-slot:seo>
+        <meta name="description" content="¡En Fercho Tech estamos abiertos a escucharte! Ponte en contacto con nosotros para resolver tus dudas, solicitar presupuestos de desarrollo o soporte técnico especializado.">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Contacto - Fercho Tech">
+        <meta property="og:description" content="¿Tienes un proyecto en mente o necesitas soporte técnico? Escríbenos hoy mismo.">
+        <meta property="og:url" content="https://ferchudev.com/contacto">
+    </x-slot:seo>
 
     <section id="contacto" class="py-32 bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white relative overflow-hidden min-h-screen flex items-center">
 

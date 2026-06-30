@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{ $seo ?? null }}
 </head>
 <body class="bg-[#0b1329] text-gray-100 font-sans antialiased">
     <x-navbar.home></x-navbar.home>
