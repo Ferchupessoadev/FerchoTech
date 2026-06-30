@@ -1,4 +1,13 @@
 <x-layouts.app title="Fercho Tech - Sobre Nosotros">
+    <x-slot:seo>
+        <meta name="description" content="Conoce la historia, misión y los valores de Fercho Tech. Somos un equipo apasionado por la tecnología, dedicado a potenciar y asegurar la infraestructura digital de nuestros clientes.">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Quiénes Somos - Fercho Tech">
+        <meta property="og:description" content="Conoce al equipo detrás de Fercho Tech y cómo ayudamos a transformar empresas a través de la tecnología.">
+        <meta property="og:url" content="https://ferchudev.com/nosotros">
+    </x-slot:seo>
     <section id="sobre-nosotros" class="py-28 min-h-screen bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white relative overflow-hidden flex items-center">
 
         <div class="absolute top-10 left-1/4 size-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>

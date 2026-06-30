@@ -1,4 +1,13 @@
 <x-layouts.app title="Blog - Recursos y Guías Tecnológicas">
+    <x-slot:seo>
+        <meta name="description" content="Explora artículos, tutoriales, novedades y consejos sobre desarrollo web, seguridad informática y soporte técnico en el blog oficial de Fercho Tech.">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Blog de Tecnología y Desarrollo - Fercho Tech">
+        <meta property="og:description" content="Aprende sobre programación, infraestructura y tendencias tecnológicas con nuestros artículos.">
+        <meta property="og:url" content="https://ferchudev.com/blog">
+    </x-slot:seo>
 
     <section id="blog" class="py-28 min-h-screen bg-gradient-to-b from-[#0b1329] to-[#080d1c] text-white relative overflow-hidden">
 
