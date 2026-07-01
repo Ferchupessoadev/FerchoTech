@@ -13,7 +13,7 @@ class RegisteredUserController extends Controller
 {
     public function index()
     {
-        return view('administrator.auth.register');
+        return view('auth.register');
     }
 
     public function store(StoreRegisteredRequest $request)
