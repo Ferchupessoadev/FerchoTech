@@ -1,6 +1,6 @@
 <x-layouts.dashboard section="Bandeja de Entrada" title="Detalle del Mensaje">
     <div class="mb-4">
-        <a href="{{ route('dashboard') }}"
+        <a href="{{ route('dashboard.message.index') }}"
            class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors group">
             <i data-lucide="arrow-left" class="size-4 transition-transform group-hover:-translate-x-1"></i>
             Volver a la bandeja de entrada
