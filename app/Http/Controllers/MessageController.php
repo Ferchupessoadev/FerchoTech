@@ -15,7 +15,7 @@ class MessageController extends Controller
         //
         $messages = ContactMessage::latest()->paginate(10);
 
-        return view('administrator.dashboard', [
+        return view('dashboard.messages.index', [
             'title' => 'Dashboard - Fercho Sistemas',
             'messages' => $messages
         ]);
@@ -34,7 +34,7 @@ class MessageController extends Controller
      */
     public function show(ContactMessage $message)
     {
-        return view('administrator.message', [
+        return view('dashboard.messages.show', [
             'title' => 'Dashboard - Fercho Sistemas',
             'message' => $message
         ]);
