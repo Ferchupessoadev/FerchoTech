@@ -16,10 +16,10 @@
         </a>
 
         <div class="border-t border-slate-900/45 my-1 mx-2"></div>
-        <a href="{{ route('dashboard') }}"
-           class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group {{ request()->routeIs('dashboard') ? 'bg-blue-500/10 text-blue-400 font-semibold' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200' }}">
-            <span class="absolute left-0 top-3 bottom-3 w-1 rounded-r-md bg-blue-500 transition-transform scale-y-0 group-hover:scale-y-100 {{ request()->routeIs('dashboard') ? 'scale-y-100' : '' }}"></span>
-            <i data-lucide="mail" class="size-5 transition-colors group-hover:text-blue-400 {{ request()->routeIs('dashboard') ? 'text-blue-400' : 'text-slate-500' }}"></i>
+        <a href="{{ route('dashboard.message.index') }}"
+           class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group {{ request()->routeIs('dashboard.message.index') ? 'bg-blue-500/10 text-blue-400 font-semibold' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200' }}">
+            <span class="absolute left-0 top-3 bottom-3 w-1 rounded-r-md bg-blue-500 transition-transform scale-y-0 group-hover:scale-y-100 {{ request()->routeIs('dashboard.message.index') ? 'scale-y-100' : '' }}"></span>
+            <i data-lucide="mail" class="size-5 transition-colors group-hover:text-blue-400 {{ request()->routeIs('dashboard.message.index') ? 'text-blue-400' : 'text-slate-500' }}"></i>
             Mensajes
         </a>
 
