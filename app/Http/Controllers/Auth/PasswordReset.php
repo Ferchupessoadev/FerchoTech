@@ -11,7 +11,7 @@ class PasswordReset extends Controller
 {
     public function index(Request $request)
     {
-        return view('administrator.auth.send-email-password-reset');
+        return view('auth.send-email-password-reset');
     }
 
     public function store(Request $request)

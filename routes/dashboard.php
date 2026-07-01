@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LucideIconController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\SettingController;
@@ -12,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
 
 Route::middleware(['auth','role:admin'])->group(function () {
-    Route::get('/dashboard', [MessageController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
+    Route::get('/dashboard/messages/', [MessageController::class, 'index'])->name('dashboard.message.index');
     Route::get('/dashboard/message/{message}', [MessageController::class, 'show'])->name('dashboard.message');
     Route::delete('/dashboard/message/{message}', [MessageController::class, 'destroy'])->name('dashboard.message.destroy');
 
